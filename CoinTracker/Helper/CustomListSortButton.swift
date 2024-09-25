@@ -18,7 +18,11 @@ struct CustomListSortButton: View {
             Text(title)
                 .font(.headline)
             if isSorted {
-                Image(systemName: isUp ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill")
+                Image(systemName: "arrowtriangle.up.fill")
+                    // Rotate based on isUp state
+                    .rotationEffect(.degrees(isUp ? 0 : 180))
+                    // Animation
+                    .animation(Animation.easeInOut(duration: 0.7), value: isUp)
                     .font(.subheadline)
             }
         }
