@@ -11,4 +11,5 @@ import Foundation
 protocol NetworkServiceProtocol {
     var type: String { get }
     func fetchCoins() async throws -> [Coin]
+    func fetchExtraInfo() async throws -> ExtraInfo
 }

@@ -22,6 +22,7 @@ struct Coin: Codable, Identifiable {
     let atlDate: String
     let roi: Roi?
     let lastUpdated: String
+    let sparklineIn7D: Sparkline7D
     let priceChangePercentage24HInCurrency: Double
 
     enum CodingKeys: String, CodingKey {
@@ -48,6 +49,7 @@ struct Coin: Codable, Identifiable {
         case atlDate = "atl_date"
         case roi
         case lastUpdated = "last_updated"
+        case sparklineIn7D = "sparkline_in_7d"
         case priceChangePercentage24HInCurrency = "price_change_percentage_24h_in_currency"
     }
 }
@@ -63,4 +65,31 @@ enum Currency: String, Codable {
     case btc = "btc"
     case eth = "eth"
     case usd = "usd"
+}
+
+// MARK: - Sparkline7D
+
+struct Sparkline7D: Codable {
+    let price: [Double]
+}
+
+
+struct ExtraInfo: Codable {
+    let hashingAlgorithm: String
+    let description: Tion
+    let links: Links
+    
+    enum CodingKeys: String, CodingKey {
+        case hashingAlgorithm = "hashing_algorithm"
+        case description
+        case links
+    }
+}
+
+struct Tion: Codable {
+    let en: String
+}
+
+struct Links: Codable {
+    let homepage: [String]
 }

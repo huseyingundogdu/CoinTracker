@@ -14,6 +14,12 @@ enum NetworkError: String, Error {
 }
 
 struct WebService: NetworkServiceProtocol {
+    func fetchExtraInfo() async throws -> ExtraInfo {
+        return ExtraInfo(hashingAlgorithm: "", description: Tion(en: ""), links: Links(homepage: []))
+    }
+    
+
+    
     var type: String = "web"
     
     private func fetch<T: Decodable>(_ url: String) async throws -> T {

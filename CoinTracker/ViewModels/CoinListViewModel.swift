@@ -12,6 +12,10 @@ class CoinListViewModel: ObservableObject {
     
     private var service: NetworkServiceProtocol
     @Published var coins: [Coin] = [Coin]()
+    @Published var isSortedByCoin: Bool = false
+    @Published var isSortedByPrice: Bool = false
+    @Published var isSortedByCoinDesc: Bool = false
+    @Published var isSortedByPriceDesc: Bool = false
     
     
     func fetchCoins() async {
@@ -26,6 +30,11 @@ class CoinListViewModel: ObservableObject {
         } catch {
             print("error")
         }
+    }
+    
+    func refreshTheList() {
+        isSortedByCoin = false
+        isSortedByPrice = false
     }
     
     init(service: NetworkServiceProtocol) {

@@ -13,15 +13,19 @@ struct LocalService: NetworkServiceProtocol {
     
     private func fetch<T: Decodable>(_ resource: String) async throws -> T {
         guard let path = Bundle.main.path(forResource: resource, ofType: "json") else {
+            print("path error")
             fatalError("path")
         }
-        print(path)
+        
         let data = try Data(contentsOf: URL(filePath: path))
         
         do {
             let decodedData = try JSONDecoder().decode(T.self, from: data)
             return decodedData
         } catch {
+            print("data error")
+            print("data error2")
+            print(error.localizedDescription)
             fatalError("data")
         }
     }
@@ -30,4 +34,7 @@ struct LocalService: NetworkServiceProtocol {
         return try await fetch(Constants.Paths.allCoins)
     }
     
+    func fetchExtraInfo() async throws -> ExtraInfo {
+        return try await fetch(Constants.Paths.chart)
+    }
 }
