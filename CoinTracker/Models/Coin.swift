@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Coin: Codable, Identifiable {
+struct Coin: Codable, Identifiable, Hashable {
     let id, symbol, name: String
     let image: String
     let currentPrice: Double
@@ -55,13 +55,13 @@ struct Coin: Codable, Identifiable {
 }
 
 // MARK: - Roi
-struct Roi: Codable {
+struct Roi: Codable, Hashable {
     let times: Double
     let currency: Currency
     let percentage: Double
 }
 
-enum Currency: String, Codable {
+enum Currency: String, Codable, Hashable {
     case btc = "btc"
     case eth = "eth"
     case usd = "usd"
@@ -69,12 +69,12 @@ enum Currency: String, Codable {
 
 // MARK: - Sparkline7D
 
-struct Sparkline7D: Codable {
+struct Sparkline7D: Codable, Hashable {
     let price: [Double]
 }
 
 
-struct ExtraInfo: Codable {
+struct ExtraInfo: Codable, Hashable {
     let hashingAlgorithm: String
     let description: Tion
     let links: Links
@@ -86,10 +86,10 @@ struct ExtraInfo: Codable {
     }
 }
 
-struct Tion: Codable {
+struct Tion: Codable, Hashable {
     let en: String
 }
 
-struct Links: Codable {
+struct Links: Codable, Hashable {
     let homepage: [String]
 }

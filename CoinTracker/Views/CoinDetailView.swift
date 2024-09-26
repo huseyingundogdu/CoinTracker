@@ -118,6 +118,7 @@ struct CoinDetailView: View {
 #Preview {
     NavigationStack {
         CoinDetailView(coin: Constants.sampleCoins[0])
+            .environment(Router())
     }
 }
 

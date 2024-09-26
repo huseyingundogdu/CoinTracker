@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CoinListView: View {
     @StateObject private var vm = CoinListViewModel(service: LocalService())
+    @Environment(Router.self) private var router
     
     var coins: [Coin] {
         var coins = vm.coins
@@ -35,17 +36,14 @@ struct CoinListView: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            Text("Trend Coins")
-                .font(.title2)
-                .bold()
-                .padding(.horizontal)
+            //Trend Section
             TrendCoinsView(coins: vm.coins)
-                .padding()
             
             Text("All Coins")
                 .font(.title2)
                 .bold()
                 .padding(.horizontal)
+            
             //Order Buttons
             HStack {
                 Button {
@@ -75,10 +73,15 @@ struct CoinListView: View {
                 }
             }
             .padding(.horizontal)
+            
             //All Coins List
             List {
                 ForEach(coins) { coin in
                     CoinListRow(coin: coin)
+                        .onTapGesture {
+                            //Navigate to coin detail view
+                            router.navigate(.coinDetail(coin: coin))
+                        }
                 }
             }
             .listStyle(.plain)
@@ -93,6 +96,7 @@ struct CoinListView: View {
 #Preview {
     NavigationStack {
         CoinListView()
+            .environment(Router())
     }
 }
 

@@ -8,32 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    var coins: [Coin] = Constants.sampleCoins
-    
+    @Environment(Router.self) private var router
     
     var body: some View {
+        @Bindable var router = router
         //CoinsView - List
-        VStack {
-            HStack {
-                Text("Coins")
-                Spacer()
-                Text("Prices")
+        NavigationStack(path: $router.navPath) {
+            VStack {
+                CoinListView()
             }
-            .padding()
-            List {
-                //CoinView - ForEach
-                ForEach(coins) { coin in
-                    HStack {
-                        AsyncImage(url: URL(string: coin.image), scale: 5)
-                            .frame(width: 50, height: 50)
-                        
-                        Text(coin.name)
-                            .font(.title3)
-                            .bold()
-                        Spacer()
-                        Text(coin.currentPrice.description)
-                            .padding(.vertical)
-                    }
+            .navigationTitle("Coin Tracker")
+            .navigationDestination(for: Router.Destination.self) { destination in
+                switch destination {
+                case .coinDetail(let coin):
+                    CoinDetailView(coin: coin)
                 }
             }
         }
@@ -42,4 +30,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(Router())
 }
