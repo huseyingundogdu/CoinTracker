@@ -29,6 +29,7 @@
 		1DDBBA332C9CA3B1002802DE /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDBBA322C9CA3B1002802DE /* Double.swift */; };
 		1DDBBA352C9CA8B8002802DE /* TrendCoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDBBA342C9CA8B8002802DE /* TrendCoinsView.swift */; };
 		1DDBBA372C9D7596002802DE /* CustomListSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDBBA362C9D7596002802DE /* CustomListSortButton.swift */; };
+		1DF70AE72CA5A94E0065F0C3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF70AE62CA5A94E0065F0C3 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		1DDBBA322C9CA3B1002802DE /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1DDBBA342C9CA8B8002802DE /* TrendCoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCoinsView.swift; sourceTree = "<group>"; };
 		1DDBBA362C9D7596002802DE /* CustomListSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListSortButton.swift; sourceTree = "<group>"; };
+		1DF70AE62CA5A94E0065F0C3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				1DDBBA322C9CA3B1002802DE /* Double.swift */,
+				1DF70AE62CA5A94E0065F0C3 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				1DDBBA312C9CA265002802DE /* CoinListRow.swift in Sources */,
 				1D0F2AA82C99DF32008AE77D /* NetworkServiceProtocol.swift in Sources */,
 				1D06A03B2C988F9200789703 /* Router.swift in Sources */,
+				1DF70AE72CA5A94E0065F0C3 /* Color.swift in Sources */,
 				1DDBBA2F2C9A0C80002802DE /* CoinDetailViewModel.swift in Sources */,
 				1D06A0362C98880400789703 /* Coin.swift in Sources */,
 				1DDBBA2D2C9A0BCD002802DE /* ChartData.swift in Sources */,

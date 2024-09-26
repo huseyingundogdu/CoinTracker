@@ -99,36 +99,3 @@ struct CoinListView: View {
             .environment(Router())
     }
 }
-
-//extension CoinListView {
-//    var trendSection: some View {
-//        VStack(alignment: .leading) {
-//            Text("24h Trends")
-//                .font(.title2)
-//                .bold()
-//            ScrollView(.horizontal, showsIndicators: false) {
-//                HStack {
-//                    ForEach(trendCoins) { coin in
-//                        VStack {
-//                            AsyncImage(url: URL(string: coin.image), scale: 4)
-//                                .frame(width: 100, height: 100)
-//                                .background {
-//                                    RoundedRectangle(cornerRadius: 12)
-//                                        .foregroundStyle(.gray.opacity(0.2))
-//                                }
-//                            
-//                            HStack {
-//                                Text(coin.symbol.uppercased())
-//                                    .bold()
-//                                Spacer()
-//                                Text(coin.priceChangePercentage24H.toPercent())
-//                                    .bold()
-//                                    .foregroundStyle(.green)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}

@@ -14,14 +14,18 @@ struct ContentView: View {
         @Bindable var router = router
         //CoinsView - List
         NavigationStack(path: $router.navPath) {
-            VStack {
-                CoinListView()
-            }
-            .navigationTitle("Coin Tracker")
-            .navigationDestination(for: Router.Destination.self) { destination in
-                switch destination {
-                case .coinDetail(let coin):
-                    CoinDetailView(coin: coin)
+            ZStack {
+                Color.theme.background
+                    .ignoresSafeArea()
+                VStack {
+                    CoinListView()
+                }
+                .navigationTitle("Coin Tracker")
+                .navigationDestination(for: Router.Destination.self) { destination in
+                    switch destination {
+                    case .coinDetail(let coin):
+                        CoinDetailView(coin: coin)
+                    }
                 }
             }
         }
