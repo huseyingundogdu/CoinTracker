@@ -10,7 +10,7 @@ import Charts
 
 struct CoinDetailView: View {
     @StateObject private var vm = CoinDetailViewModel(service: LocalService())
-    let coin: Coin
+    var coin: Coin
     
     var body: some View {
         ScrollView {

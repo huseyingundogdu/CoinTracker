@@ -108,13 +108,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1D06A03D2C988FD300789703 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
 		1D06A03E2C988FD700789703 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +160,6 @@
 				1D06A0402C988FE200789703 /* Service */,
 				1D06A03F2C988FDD00789703 /* Helper */,
 				1D06A03E2C988FD700789703 /* Extensions */,
-				1D06A03D2C988FD300789703 /* Enums */,
 				1D06A03C2C988FC900789703 /* Models */,
 				1D06A0392C988F8800789703 /* Router */,
 				1D06A0382C988F7F00789703 /* ViewModels */,
